@@ -12,7 +12,7 @@ def play_game(limit):
     max_attempts = 3
     while attempts < max_attempts:
        try:
-         guess = int(input("Enter your guess: "))
+         guess = int(input("Enter your guess, you will have 3 attempts: "))
          attempts += 1
          if guess > number_to_guess:
             print("Too high!")
@@ -23,12 +23,12 @@ def play_game(limit):
             return
        except ValueError:
             print("Invalid Input. Please enter a number.")
-    print(f"Out of guesses! The coreect number was {number_to_guess}.\n")
+    print(f"Out of guesses! The correct number was {number_to_guess}.\n")
         
 while True:
     display_heading()
-    limit = 3
+    limit = 50
     play_game(limit)
-    play_again = input("Do you want to play again? (y\n): ")
+    play_again = input("Do you want to play again? (y/n): ")
     if play_again.lower() != 'y':
         break
